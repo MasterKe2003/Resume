@@ -171,16 +171,24 @@
       let portfolioIsotope = new Isotope(portfolioContainer, {
         itemSelector: '.portfolio-item'
       });
-
+  
       let portfolioFilters = select('#portfolio-flters li', true);
-
+  
+      // 手动为第一个按钮添加'filter-active'类名
+      portfolioFilters[0].classList.add('filter-active');
+  
+      // 将作品集中的作品项过滤为第一个分类
+      portfolioIsotope.arrange({
+        filter: portfolioFilters[0].getAttribute('data-filter')
+      });
+  
       on('click', '#portfolio-flters li', function(e) {
         e.preventDefault();
         portfolioFilters.forEach(function(el) {
           el.classList.remove('filter-active');
         });
         this.classList.add('filter-active');
-
+  
         portfolioIsotope.arrange({
           filter: this.getAttribute('data-filter')
         });
@@ -189,8 +197,8 @@
         });
       }, true);
     }
-
   });
+  
 
   /**
    * Initiate portfolio lightbox 
