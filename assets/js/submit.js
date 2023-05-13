@@ -4,17 +4,15 @@ async function pushMessage(event) {
 	var name = document.getElementById('name').value;
 	var vx = document.getElementById('vx').value;
 	var message = document.getElementById('message').value;
-	
+	let m = 	`姓名:${name}\n微信:${vx}\n消息:${message}`
 	// 发送post
 	var url = "https://www.pushplus.plus/api/send"
 	var body = {
 		"token": "495682d8df5e4a9386658c265091b3c5",
 		"title": "网页消息",
-		"content":"姓名:" + name 
-			+ "\n微信:" + vx 
-			+ "\n消息:" + message,
-		"channel":"cp",
-		    "webhook":"1433223"
+		"content":m,
+		"channel":"webhook",
+		"webhook":"1"
 	}
 	fetch(url, { //请求的服务器地址
 		body: JSON.stringify(body), //请求的数据
@@ -31,4 +29,31 @@ async function pushMessage(event) {
        .catch(err=>{    //错误打印
            alert("发送失败了，网页又出bug啦")
        })
+}
+
+var popupVisible = false;
+function togglePopup1() {
+	var popup = document.getElementById('popup1');
+	var toggleBtn = document.getElementById('toggleBtn1');
+	if (popupVisible) {
+	  popup.classList.remove('show');
+	  toggleBtn.textContent = '打开tim';
+	} else {
+	  popup.classList.add('show');
+	  toggleBtn.textContent = '关闭';
+	}
+	popupVisible = !popupVisible;
+  }
+  
+function togglePopup2() {
+  var popup = document.getElementById('popup2');
+  var toggleBtn = document.getElementById('toggleBtn2');
+  if (popupVisible) {
+	popup.classList.remove('show');
+	toggleBtn.textContent = '打开vx';
+  } else {
+	popup.classList.add('show');
+	toggleBtn.textContent = '关闭';
+  }
+  popupVisible = !popupVisible;
 }

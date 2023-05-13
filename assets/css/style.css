@@ -1206,3 +1206,41 @@ section {
 #footer .credits {
   font-size: 13px;
 }
+
+
+.popup1,.popup2 {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  visibility: hidden;
+}
+.popup1 img,.popup2 img {
+  max-width: 90%;
+  max-height: 90%;
+}
+.popup1.show,.popup2.show {
+  visibility: visible;
+}
+.popup1 .close1, .popup2 .close2 {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.popup1{
+  top: 20%;
+  right: 50%;
+  height: 300%;
+  background-color: rgba(5, 176, 255, 0.5);
+}
+.popup2 {
+  top: 0%;
+  right: 50%;
+  height: 300%;
+  background-color: rgba(0, 163, 87, 0.5);
+}
