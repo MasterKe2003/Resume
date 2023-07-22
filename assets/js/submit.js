@@ -30,30 +30,3 @@ async function pushMessage(event) {
            alert("发送失败了，网页又出bug啦")
        })
 }
-
-var popupVisible = false;
-function togglePopup1() {
-	var popup = document.getElementById('popup1');
-	var toggleBtn = document.getElementById('toggleBtn1');
-	if (popupVisible) {
-	  popup.classList.remove('show');
-	//   toggleBtn.textContent = '打开tim';
-	} else {
-	  popup.classList.add('show');
-	//   toggleBtn.textContent = '关闭';
-	}
-	popupVisible = !popupVisible;
-  }
-  
-function togglePopup2() {
-  var popup = document.getElementById('popup2');
-  var toggleBtn = document.getElementById('toggleBtn2');
-  if (popupVisible) {
-	popup.classList.remove('show');
-	// toggleBtn.textContent = '打开vx';
-  } else {
-	popup.classList.add('show');
-	// toggleBtn.textContent = '关闭';
-  }
-  popupVisible = !popupVisible;
-}

@@ -1216,10 +1216,7 @@ section {
   z-index: 9999;
   visibility: hidden;
 }
-.popup1 img,.popup2 img {
-  max-width: 90%;
-  max-height: 90%;
-}
+
 .popup1.show,.popup2.show {
   visibility: visible;
 }
@@ -1230,17 +1227,4 @@ section {
   font-size: 24px;
   color: #fff;
   cursor: pointer;
-}
-
-.popup1{
-  top: 20%;
-  right: 50%;
-  height: 300%;
-  background-color: rgba(5, 176, 255, 0.5);
-}
-.popup2 {
-  top: 0%;
-  right: 50%;
-  height: 300%;
-  background-color: rgba(0, 163, 87, 0.5);
 }
