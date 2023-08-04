@@ -1,3 +1,4 @@
+//图片懒加载
 // 获取所有具有 data-src 属性的图片元素
 const lazyImages = document.querySelectorAll('img[data-src]');
 
@@ -18,3 +19,5 @@ lazyImages.forEach((img) => {
   // 开始观察图片
   observer.observe(img);
 });
+
+//切换播放源
