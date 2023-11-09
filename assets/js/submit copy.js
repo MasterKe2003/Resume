@@ -6,11 +6,13 @@ async function pushMessage(event) {
 	var message = document.getElementById('message').value;
 	let m = 	`姓名:${name}\n微信:${vx}\n消息:${message}`
 	// 发送post
-	var url = "https://api.day.app"
+	var url = "https://www.pushplus.plus/api/send"
 	var body = {
+		"token": "495682d8df5e4a9386658c265091b3c5",
 		"title": "网页消息",
-		"body":m,
-		"device_key":"gQ7d2q2VJFe6kA9R7ZWK48"
+		"content":m,
+		"channel":"webhook",
+		"webhook":"1"
 	}
 	fetch(url, { //请求的服务器地址
 		body: JSON.stringify(body), //请求的数据
